@@ -11,6 +11,8 @@
 
 </div>
 
-참조 - [README 관련 블로그 주소][blog]
+참조 링크
 
-[blog]: (https://eeeun.tistory.com/31)
+[README 관련 블로그 주소][blog]
+
+[blog]: https://eeeun.tistory.com/31
