@@ -23,3 +23,56 @@ a {
   white-space: nowrap;
   border-width: 0;
 }
+
+.float-section .avatars-list {
+  overflow: hidden;
+  > li {
+    position: relative;
+    float: left;
+    margin: 0 20px 20px 0;
+
+    &:nth-of-type(4),
+    &:nth-of-type(8) {
+      margin-right: 0;
+    }
+    &:nth-of-type(5),
+    &:nth-of-type(6),
+    &:nth-of-type(7),
+    &:nth-of-type(8) {
+      margin-bottom: 0;
+    }
+  }
+}
+.flex-section .avatars-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  > li {
+    position: relative;
+    float: left;
+  }
+}
+.avatars-list {
+  width: 396px;
+  margin: 20px auto;
+  img {
+    display: block;
+    border-radius: 1000px;
+  }
+}
+.circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  aspect-ratio: 1;
+  border-radius: 1000px;
+  border: 1px solid #fff;
+  background-color: #dbdbdb;
+}
+.--active {
+  background-color: #4cfe88;
+}
+h2 {
+  text-align: center;
+}
