@@ -29,7 +29,11 @@
     <ul class="avatars-list">
       <li>
         <img src="./../assets/avatars/face1.jpg" alt="사용자 A의 아바타" loading="lazy" width="64" heigth="64" />
-        <span class="circle" aria-label="비활성화 표시"></span>
+        <span class="circle" aria-label="비활성화 상태"></span>
+      </li>
+      <li>
+        <img src="./../assets/avatars/face2.jpg" alt="사용자 B의 아바타" loading="lazy" width="64" heigth="64" />
+        <span class="circle --active" aria-label="활성화 상태"></span>
       </li>
     </ul>
   </section>
@@ -39,16 +43,24 @@
     <ul class="avatars-list">
       <li>
         <img src="./../assets/avatars/face1.jpg" alt="사용자 A의 아바타" loading="lazy" width="64" heigth="64" />
-        <span class="circle" aria-label="비활성화 표시"></span>
+        <span class="circle" aria-label="비활성화 상태"></span>
+      </li>
+      <li>
+        <img src="./../assets/avatars/face2.jpg" alt="사용자 B의 아바타" loading="lazy" width="64" heigth="64" />
+        <span class="circle --active" aria-label="활성화 상태"></span>
       </li>
     </ul>
   </section>
 </main>
 ```
 
-마크업 구조는 `main`태그 안에 각각 `float`과 `flex` css 스타일링이 들어가야 하므로 두개의 `section`태그로 서로 다른 class를 부여했다. 디자인 시안을 보면 이미지 8개가 나열이 되는데 나는 이 구조에서 순서를 느끼지 못하여서 비순서형 목록으로 `ul`태그를 사용했다. 사실 **BEM** 기법으로 class를 작성하고 싶었는데 CSS에서는 **BEM**을 사용이 제한이 되므로 `ul`에만 class를 부여하고 마크업에 집중을 더 하고자 `ul>li>img+span` 구조로 마크업을 작성했다.
+마크업 구조는 `main`태그 안에 각각 `float`과 `flex` css 스타일링이 들어가야 하므로 두개의 `section`태그로 서로 다른 class를 부여했다. 디자인 시안을 보면 이미지 8개가 나열이 되는데 나는 이 구조에서 순서를 느끼지 못하여서 **비순서형 목록으로** `ul`태그를 사용했다.
 
-`img`는 필수 속성으로 `src`, `alt` 속성을 포함해야 하고, 사실 이미지의 설명이 좀 애매해서 `aria-hidden="true"` 으로 ARIA로 스크린 리더에서 안 읽게 하고 싶었는데 alt값을 작성을 습관화하고자 `alt`값을 작성하였다. 그리고 디자인 상 이미지와 겹치게 활성화 비활성화 표시가 있는데 그 표시가 이미지보다 위에 위치해서 포지셔닝으로 위치하게 하였다. 또한 이 활성화 비활성화에 대한 설명이 있어야 접근성에 우수할 것 같아서 `aria-label`로 설명하였다.
+사실 **BEM** 기법으로 class를 작성하고 싶었는데 CSS에서는 **BEM**을 사용이 제한이 되므로 `ul`에만 class를 부여하고 마크업에 집중을 더 하고자 `ul>li>img+span` 구조로 마크업을 작성했다.
+
+`img`는 필수 속성으로 `src`, `alt` 속성을 포함해야 하고, 사실 이미지의 설명이 좀 애매해서 `aria-hidden="true"` 으로 ARIA로 스크린 리더에서 안 읽게 하고 싶었는데 `alt`값을 작성을 습관화하고자 `alt`값을 작성하였다.
+
+그리고 디자인 상 이미지와 겹치게 활성화 비활성화 상태가 있는데 그 표시가 이미지보다 위에 위치해서 포지셔닝으로 위치하게 하였다. 또한 이 활성화 비활성화에 대한 설명이 있어야 접근성에 우수할 것 같아서 `aria-label`로 설명하였다.
 
 추가로 이미지 성능 최적화를 고민해봤는데 수업시간에 배운 지연로드 `loading="lazy"`가 생각났다. 나는 원래 이미지에 스타일 속성으로 `width`값과 `height`값을 CSS로 작성하는데 HTML 속성에서 직접 지정하는게 CSS로 스타일링을 지정하는 것 보다 성능측면에서 더 좋다고 하여 이번에는 `img`태그 안에 속성으로 `width`값과 `height`값을 지정해주었다.
 
@@ -126,21 +138,20 @@ h2 {
 }
 ```
 
-#### float 사용 시
+#### float 사용 시 (.float-section)
 
-float으로 디자인상과 같은 레이아웃을 작업하기 위해서는 부모인 ul요소가 아닌 li요소에 float:left 해야 한다. float:left를 했을 땐 부모요소가 높이를 잡지 못한다. 그래서 난 float:left를 사용한 li의 부모요소에 overflow:hidden을 주어 높이를 잡을 수 있게 하였다.
+`float`으로 디자인상과 같은 레이아웃을 작업하기 위해서는 부모인 `ul`요소가 아닌 `li`요소에 `float:left` 해야 한다. `float:left`를 했을 땐 부모요소가 높이를 잡지 못한다. 그래서 난 `float:left`를 사용한 li의 부모요소에 `overflow:hidden`을 주어 높이를 잡을 수 있게 하였다.
 
-이미지간의 간격은 20px인데 동일하게 모든 li에 일단 margin: 0 20px 20px 0으로 우측과 아래 방향으로 margin 값을 20px씩 주었다. padding이 아닌 margin으로 준 이유는 활성화 비활성화 버튼이 li안에 들어가는데 padding 값을 주게 되면 li 내부의 padding값이 늘어나 안에 있는 요소들의 위치를 변화시키기 때문에 외부요소를 변화를 줘야겠다 생각하여 margin 값을 주었다.
+이미지간의 간격은 20px인데 동일하게 모든 `li`에 일단 `margin: 0 20px 20px 0`으로 우측과 아래 방향으로 `margin` 값을 20px씩 주었다. `padding`이 아닌 `margin`으로 준 이유는 활성화 비활성화 상태가 `li`안에 들어가는데 `padding` 값을 주게 되면 `li` 내부의 `padding`값이 늘어나 안에 있는 요소들의 위치를 변화시키기 때문에 외부요소를 변화를 줘야겠다 생각하여 `margin` 값을 주었다.
 
-마저 콘텐츠의 간격을 margin으로 주었을 때를 이야기 해보겠다. 지금은 전체적으로 li의 우측 아래가 margin값이 적용 되었는데 디자인상 4번째와 8번째 이미지는 우측에 아무런 이미지가 없어 우측이 margin값을 가질 필요가 없고, 하단에 모든 이미지는 아래에 이미지가 없기 때문에 하단에 margin 값을 필요가 없다고 생각하여 가상 선택자인 nth-of-type(n번째)로 4,8번 li에 margin-right:0; 5,6,7,8번 li에 margin-bottom:0;값을 주어 불필요한 margin값을 제거하였다.
+마저 콘텐츠의 간격을 `margin`으로 주었을 때를 이야기 해보겠다. 지금은 전체적으로 `li`의 우측 아래가 `margin`값이 적용 되었는데 디자인상 4번째와 8번째 이미지는 우측에 아무런 이미지가 없어 우측이 `margin`값을 가질 필요가 없고, 하단에 모든 이미지는 아래에 이미지가 없기 때문에 하단에 `margin` 값을 필요가 없다고 생각하여 **가상 선택자인** `nth-of-type(n번째)`로 4,8번 `li`에 `margin-right:0;` 5,6,7,8번 `li`에 `margin-bottom:0;`값을 주어 불필요한 margin값을 제거하였다.
 
-#### flex 사용 시
+#### flex 사용 시 (.flex-section)
 
-flex는 생각보다 float보다 css작성에 편리하다. 일단 flex는 float을 했을 때와 달리 부모요소에 작성하여야 한다. 그래서 .flex-section .avatars-list에 display:flex;를 주었고, flex-flow: row wrap을 주었다. 여기서 flex-flow는 축약어인데 앞 row는 x방향 뒤 wrap은 부모의 넓이를 넘었을 때 하단으로 떨어뜨리는 속성이다. 기본값은 row nowrap이다.
+`flex`는 생각보다 `float`보다 css작성에 편리하다. 일단 `flex`는 `float`을 했을 때와 달리 부모요소에 작성하여야 한다. 그래서 **.flex-section .avatars-list**에 `display:flex;`를 주었고, `flex-flow: row wrap`을 주었다. 여기서 `flex-flow`는 축약어인데 앞 `row`는 x방향 뒤 `wrap`은 부모의 넓이를 넘었을 때 하단으로 떨어뜨리는 속성이다. 기본값은 `row nowrap`이다.
 
-이제 이미지안의 간격을 지정해주어야 하는데 flex, gird는 gap이라는 속성이 있다. gap: 20px이라고 하면 flex 사용한 내부 자식 요소들 간의 간격을 20px을 주어 margin이나 padding을 사용하지 않아도 깔끔하게 간격을 만들 수 있다.
-
-이렇게 flex가 float에 비해 간단한 걸 알 수 있다.
+이제 이미지안의 간격을 지정해주어야 하는데 `flex, grid`는 `gap`이라는 속성이 있다. `gap: 20px`이라고 하면 `flex` 사용한 내부 자식 요소들 간의 간격을 20px을 주어 `margin`이나 `padding`을 사용하지 않아도 깔끔하게 간격을 만들 수 있다.
+만일 양옆만 `gap`을 주고 싶으면 `gap:0 20px` 상하 `gap`을 주고 싶으면 `gap:20px 0` 이렇게 작성하면 된다.
 
 #### 이미지 안 비활성화 활성화 원형표시
 
@@ -160,4 +171,4 @@ flex는 생각보다 float보다 css작성에 편리하다. 일단 flex는 float
 }
 ```
 
-.circle이라는 class를 부여했고, position: absolute로 위치를 잡았다. 비활성화된 때를 기본으로 스타일링 하였고, 활성화된 스타일링은 .--active라는 class를 부여해 색을 다르게 하였고, 디자인상 활성화 된 2,4,5,6번째 li 자식요소 span에 .--active class를 추가해주어 활성화표시를 주었다.
+**.circle이라는 class**를 부여했고, `position: absolute`로 위치를 잡았다. 비활성화된 때를 기본으로 스타일링 하였고, 활성화된 스타일링은 **.--active라는 class**를 부여해 색을 다르게 하였고, 디자인상 활성화 된 2,4,5,6번째 `li` 자식요소 `span`태그에 **.--active class**를 추가해주어 활성화표시를 주었다.
