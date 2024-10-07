@@ -4,87 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>avatars | Techit</title>
-    <link rel="preload" as="style" href="./../assets/font/notoserif/notoserif.css" />
-    <link rel="stylesheet" href="./../assets/font/notoserif/notoserif.css" />
-    <link rel="preload" as="style" href="./../assets/font/pretendard/pretendardvariable-dynamic-subset.css" />
-    <link rel="stylesheet" href="./../assets/font/pretendard/pretendardvariable-dynamic-subset.css" />
     <link rel="stylesheet" href="./styles/avatars.css" />
   </head>
   <body>
-    <h1 class="sr-only">homework avatar Layout</h1>
     <main class="main">
-      <section class="float-section">
-        <h2>float Layout</h2>
+      <section class="section">
+        <h1 class="sr-only">homework avatar Layout</h1>
         <ul class="avatars-list">
           <li>
-            <img src="./../assets/avatars/face1.jpg" alt="사용자 A의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face1.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face2.jpg" alt="사용자 B의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face2.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle --active" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face3.jpg" alt="사용자 C의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face3.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face4.jpg" alt="사용자 D의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face4.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle --active" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face5.jpg" alt="사용자 E의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face5.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle --active" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face6.jpg" alt="사용자 F의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face6.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle --active" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face7.jpg" alt="사용자 G의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face7.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle" aria-hidden="true"></span>
+            </div>
           </li>
           <li>
-            <img src="./../assets/avatars/face8.jpg" alt="사용자 H의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
-          </li>
-        </ul>
-      </section>
-      <hr />
-      <section class="flex-section">
-        <h2>flex Layout</h2>
-        <ul class="avatars-list">
-          <li>
-            <img src="./../assets/avatars/face1.jpg" alt="사용자 A의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face2.jpg" alt="사용자 B의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face3.jpg" alt="사용자 C의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face4.jpg" alt="사용자 D의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face5.jpg" alt="사용자 E의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face6.jpg" alt="사용자 F의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle --active" aria-label="활성화된 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face7.jpg" alt="사용자 G의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
-          </li>
-          <li>
-            <img src="./../assets/avatars/face8.jpg" alt="사용자 H의 아바타" loading="lazy" width="64" heigth="64" />
-            <span class="circle" aria-label="비활성화 상태"></span>
+            <div class="avatars-state">
+              <img src="./../assets/images/face8.webp" alt="홍길동의 프로필" width="64" heigth="64" />
+              <span class="circle" aria-hidden="true"></span>
+            </div>
           </li>
         </ul>
       </section>
