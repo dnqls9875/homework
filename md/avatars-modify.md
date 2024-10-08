@@ -2,9 +2,13 @@
 
 ## 목차
 
-1. 과제 수정 피드백
-2. 수정 후 HTML, CSS코드
-3. 결론
+- [과제 수정 반영 사항.](#과제-수정-반영-사항)
+  - [목차](#목차)
+  - [과제 수정 피드백](#과제-수정-피드백)
+  - [수정 후 코드](#수정-후-코드)
+    - [💡 HTML](#-html)
+    - [💡 CSS](#-css)
+  - [결론](#결론)
 
 <br>
 
@@ -54,7 +58,7 @@
 
 > 솔직하게 말해서 `@support` 규칙을 몰랐을 뿐더러 `flex`를 지원하는 브라우저 환경에서 `flex`를 사용해라 라는 말이 `flex`를 추가해서 사용하라는 말로 느껴졌고, 세세하게 고민해보지 않는 내 잘못이 크다. 그래서 이 부분을 좀 고민을 했다. 내가 느낀건 선생님의 과제 의도는 레거시방법으로 오래된 브라우저에서 지원이 되는 `float`과 최신기술이지만 오래된 브라우저에서는 사용이 제한이 되는 `flex`였다. 먼저 모든 브라우저에서 렌더링 될 수 있는 `float`의 형태로 마크업을 구축하고, `@support`을 활용하여 `display:flex`가 지원 되는 브라우저 환경에서는 `display:flex`속성을 추가하여 보여줘라 라는 의도였다고 느껴져서 그렇게 작업을 하였다.
 
-## 수정 후 HTML, CSS코드
+## 수정 후 코드
 
 ### 💡 HTML
 
@@ -146,23 +150,23 @@ a {
 }
 
 .avatars-list {
-  overflow: hidden;
+  display: flow-root;
   width: 396px;
   margin: 20px auto;
   > li {
     position: relative;
-    float: left;
+    float: inline-start;
     margin: 0 20px 20px 0;
 
     &:nth-of-type(4),
     &:nth-of-type(8) {
-      margin-right: 0;
+      margin-inline-end: 0;
     }
     &:nth-of-type(5),
     &:nth-of-type(6),
     &:nth-of-type(7),
     &:nth-of-type(8) {
-      margin-bottom: 0;
+      margin-block-end: 0;
     }
   }
 }
@@ -196,8 +200,6 @@ a {
     flex-flow: row wrap;
     gap: 20px;
     > li {
-      position: relative;
-      float: left;
       margin: 0;
     }
   }

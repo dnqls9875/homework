@@ -25,23 +25,23 @@ a {
 }
 
 .avatars-list {
-  overflow: hidden;
+  display: flow-root;
   width: 396px;
   margin: 20px auto;
   > li {
     position: relative;
-    float: left;
+    float: inline-start;
     margin: 0 20px 20px 0;
 
     &:nth-of-type(4),
     &:nth-of-type(8) {
-      margin-right: 0;
+      margin-inline-end: 0;
     }
     &:nth-of-type(5),
     &:nth-of-type(6),
     &:nth-of-type(7),
     &:nth-of-type(8) {
-      margin-bottom: 0;
+      margin-block-end: 0;
     }
   }
 }
@@ -75,8 +75,6 @@ a {
     flex-flow: row wrap;
     gap: 20px;
     > li {
-      position: relative;
-      float: left;
       margin: 0;
     }
   }
