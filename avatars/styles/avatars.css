@@ -26,12 +26,13 @@ a {
 
 .avatars-list {
   display: flow-root;
-  width: 396px;
+  inline-size: 396px;
   margin: 20px auto;
   > li {
     position: relative;
     float: inline-start;
-    margin: 0 20px 20px 0;
+    margin-block-end: 20px;
+    margin-inline-end: 20px;
 
     &:nth-of-type(4),
     &:nth-of-type(8) {
@@ -56,15 +57,15 @@ a {
 /* 활성화 비활성화 상태 */
 .circle {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 18px;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inline-size: 18px;
   aspect-ratio: 1;
   border-radius: 1000px;
   border: 1px solid #fff;
   background-color: #dbdbdb;
 }
-.--active {
+.is--active {
   background-color: #4cfe88;
 }
 

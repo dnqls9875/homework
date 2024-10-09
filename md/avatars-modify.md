@@ -8,7 +8,9 @@
   - [수정 후 코드](#수정-후-코드)
     - [💡 HTML](#-html)
     - [💡 CSS](#-css)
+  - [2차 과제 피드백](#2차-과제-피드백)
   - [결론 및 후기](#결론-및-후기)
+  - [2차 결론 및 후기](#2차-결론-및-후기)
 
 <br>
 
@@ -68,52 +70,52 @@
     <h1 class="sr-only">homework avatar Layout</h1>
     <ul class="avatars-list">
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face1.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face1.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle"><span class="sr-only">비활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face2.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle --active" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face2.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle is--active"><span class="sr-only">활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face3.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face3.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle"><span class="sr-only">비활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face4.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle --active" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face4.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle is--active"><span class="sr-only">활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face5.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle --active" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face5.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle is--active"><span class="sr-only">활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face6.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle --active" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face6.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle is--active"><span class="sr-only">활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face7.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face7.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle"><span class="sr-only">비활성화 상태</span></figcaption>
+        </figure>
       </li>
       <li>
-        <div class="avatars-state">
-          <img src="./../assets/images/face8.webp" alt="홍길동의 프로필" width="64" heigth="64" />
-          <span class="circle" aria-hidden="true"></span>
-        </div>
+        <figure class="avatars-state">
+          <img src="./../assets/images/face8.webp" alt="사용자의 프로필" width="64" height="64" />
+          <figcaption class="circle"><span class="sr-only">비활성화 상태</span></figcaption>
+        </figure>
       </li>
     </ul>
   </section>
@@ -151,12 +153,13 @@ a {
 
 .avatars-list {
   display: flow-root;
-  width: 396px;
+  inline-size: 396px;
   margin: 20px auto;
   > li {
     position: relative;
     float: inline-start;
-    margin: 0 20px 20px 0;
+    margin-block-end: 20px;
+    margin-inline-end: 20px;
 
     &:nth-of-type(4),
     &:nth-of-type(8) {
@@ -181,15 +184,15 @@ a {
 /* 활성화 비활성화 상태 */
 .circle {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 18px;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inline-size: 18px;
   aspect-ratio: 1;
   border-radius: 1000px;
   border: 1px solid #fff;
   background-color: #dbdbdb;
 }
-.--active {
+.is--active {
   background-color: #4cfe88;
 }
 
@@ -206,6 +209,31 @@ a {
 }
 ```
 
+## 2차 과제 피드백
+
+1. `<img>, <span>` 요소를 `<div>` 요소로 감싸기보다 `<figure>` 요소를 사용하고 `<img>` 요소와 `<figcaption>` 요소를 사용하는 조합은 어떠할지 고려해보기 바람.
+
+```html
+<li>
+  <figure class="avatars-state">
+    <img src="./../assets/images/face1.webp" alt="사용자의 프로필" width="64" height="64" />
+    <figcaption class="circle"><span class="sr-only">비활성화 상태</span></figcaption>
+  </figure>
+</li>
+```
+
+> 정말 기초적인 실수 하나 `height` 오타를 발견해서 수정했고, 선생님께서 피드백 주신대로 `<figure>` `<figcation>`으로 묶어서 작업 수정했다.
+>
+> > 일단 `<figure>`속성은 `<figcation>`속성이 함께 작성되어야 하는데 `<img>`태그의 `alt`값을 `<figcation>`으로 생략이 가능하다고 알고 있었다. 하지만 나는 여기서 `alt`값을 누락하지 않고, `<figcation>`으로 활성화 비활성화 상태 아이콘을 만들 생각을 했다. 그리고 그 안에 상태를 알려주는 설명을 작성했고, `sr-only` 스타일로 화면에서는 보여지지 않지만 스크린리더에서는 읽을 수 있게 작업하였다.
+
+2. `aria-hidden=”true”` 를 사용해서는 안됨. 이 경우 스크린 리더가 상태 정보를 읽을 수 없음. 숨긴 콘텐츠`(sr-only)` 형태로 제공하는 것이 필요함.
+
+> 원래나는 `aria-label`을 이용해서 상태를 사용자에게 알려 줄 수 작업 했는데 선생님께서 이 방법보다 숨김 컨텐츠로 작업 하는걸 추천하셨다. 근데 바보같게도 숨김 컨텐츠가 `sr-only`라는 걸 알았음에도 `ARIA`기법을 사용해야만 하는 줄 알고, `aria-hidden=”true”`으로 수정했던 것 같다. `hidden`을 한다는 건 아예 사용자에게 대체텍스트를 제공하지 않는다는 의미인데 순간 착각을 하여 작업을 했다. 다음번엔 이런 잘못을 하면 안되겠다는 생각을 했다.
+
 ## 결론 및 후기
 
 최대한 이번 과제를 하면서 신경쓴다고 신경을 썼던 것 같은데, 사용자 측면에서 고민을 좀 많이 해야 겠다는 생각을 했고, 또 과제를 하면서 그냥 빨리 구현해야지가 아닌 과제 주제에 대한 이유를 좀 생각을 더 하면서 고민을 많이 해야겠다는 생각이 들었다. 단순히 빨리 과제를 해결해야지가 아닌 빠르게 작업을 해도 작업 후에 더 좋은 방향으로 나아가기 위한 리펙토링을 꾸준하게 하고 만족을 하지 말아야 되겠다고 느꼈다. 솔직히 이번 과제 이후로 자극을 많이 받았고, 머리를 강하게 맞은 느낌이 들었다.
+
+## 2차 결론 및 후기
+
+전체적으로 피드백 주신 부분에서 완료를 한 것 같지만 치명적인 실수 하나로 수정을 하였다. 바로 숨김 컨텐츠처리를 아예 스크린리더에서 대체텍스트를 무시하는 `aria-hidden="true"`로 작업을 수정했다는 것이었다. 코드로 따지면 별 수정을 하지 않았지만 의미 자체에서 많이 무너지는 마크업이었다. 정말 사소한 수정이였지만 저시력자, 시각장애인 사용자에게는 그 하나의 상태를 읽어주지 못하게하는 큰 실수라고 생각을 했고, 마크업에 대해서 다시 한번 되돌아보는 시간을 가졌고, 선생님의 피드백을 들으니 점점 마크업에 대해서 고민하며 수정을 완수하는 내 자신이 한층 성장을 하고 있다는 걸 느껴서 좋았던 시간이었다. 추가로 과제 전에는 잘 인지하지 못하고 있었던 **css 논리속성**을 수업 후에 과제에서 수정하여서 좋았다.
