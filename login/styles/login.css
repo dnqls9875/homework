@@ -131,8 +131,71 @@
     border-collapse: collapse;
     border-spacing: 0;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+  }
 }
 @layer Layout {
+  :is(.login-wrapper, .login-form) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-wrapper {
+    padding: 100px 170px 190px;
+    border: 1px solid #000;
+    min-inline-size: 460px;
+    /* background-color: lightblue; */
+  }
+  .brand {
+    flex: 0 0 auto;
+  }
+  .login-form {
+    flex: 1;
+    width: 100%;
+    margin-block-start: 50px;
+
+    input {
+      padding: 14px 14px 13px 14px;
+      border: 1px solid #dadada;
+
+      &::placeholder {
+        color: #999;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+      }
+    }
+
+    input,
+    button {
+      inline-size: 100%;
+      box-sizing: border-box;
+    }
+
+    .login-form__nickname {
+    }
+    .login-form__password {
+      margin-block-start: 10px;
+    }
+    .btn-login {
+      margin-block-start: 20px;
+      background-color: #03cf5d;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      padding-block: 16px;
+    }
+  }
 }
 @layer Compoents {
   @layer Button {
@@ -140,7 +203,6 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      all: unset;
 
       /* 크기 */
       &.base {
