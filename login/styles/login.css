@@ -3,6 +3,11 @@
 
 @layer Variable {
   :root {
+    --focus-border-color: #24388d;
+    --button-bg-color: #03cf5d;
+    --input-border-color: #dadada;
+    --white: #fff;
+    --gray99: 999;
   }
 }
 @layer Reset {
@@ -140,6 +145,16 @@
     border: 0;
     outline: 0;
   }
+  input:focus,
+  button:focus,
+  textarea:focus,
+  select:focus,
+  label:focus,
+  a:focus {
+    outline: none;
+    border: 1px solid var(--focus-border-color);
+    box-sizing: border-box;
+  }
 }
 @layer Layout {
   :is(.login-wrapper, .login-form) {
@@ -150,51 +165,20 @@
   }
 
   .login-wrapper {
-    padding: 100px 170px 190px;
-    border: 1px solid #000;
-    min-inline-size: 460px;
-    /* background-color: lightblue; */
+    --minwidth-content-size: 290px;
+
+    padding: 4.375rem 1.25rem 6.9375rem;
+    min-inline-size: var(--minwidth-content-size);
+
+    @media (min-width: 768px) {
+    }
   }
   .brand {
     flex: 0 0 auto;
   }
-  .login-form {
-    flex: 1;
-    width: 100%;
-    margin-block-start: 50px;
-
-    input {
-      padding: 14px 14px 13px 14px;
-      border: 1px solid #dadada;
-
-      &::placeholder {
-        color: #999;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 21px;
-      }
-    }
-
-    input,
-    button {
-      inline-size: 100%;
-      box-sizing: border-box;
-    }
-
-    .login-form__nickname {
-    }
-    .login-form__password {
-      margin-block-start: 10px;
-    }
-    .btn-login {
-      margin-block-start: 20px;
-      background-color: #03cf5d;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 24px;
-      padding-block: 16px;
-    }
+  .logo {
+    display: block;
+    block-size: 2.75rem;
   }
 }
 @layer Compoents {
@@ -204,15 +188,120 @@
       align-items: center;
       justify-content: center;
 
-      /* 크기 */
-      &.base {
-      }
       /* 색상 */
       &.green {
+        background-color: var(--button-bg-color);
       }
     }
   }
   @layer Form {
+    .login-form {
+      flex: 1;
+      width: 100%;
+      margin-block-start: 2.8125rem;
+
+      input {
+        border: 1px solid var(--input-border-color);
+        padding-inline: 0.875rem;
+        block-size: 2.8125rem;
+
+        &::placeholder {
+          color: var(--gray99);
+          font-size: 0.875rem;
+          font-weight: 400;
+        }
+        &:focus {
+          border-color: #03cf5d;
+          background-color: #e9f0fd;
+          outline: none;
+        }
+      }
+
+      input,
+      button {
+        inline-size: 100%;
+        box-sizing: border-box;
+      }
+
+      .login-form__password {
+        margin-block-start: 0.625rem;
+      }
+      .btn-login {
+        color: var(--white);
+        font-size: 1rem;
+        font-weight: 700;
+        block-size: 3.5rem;
+        margin-block-start: 1.25rem;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    .state-from {
+      --security-switch-color: #999;
+
+      display: flex;
+      width: 100%;
+      margin-block-start: 0.625rem;
+      justify-content: space-between;
+
+      .keep {
+        order: 1;
+        input {
+          overflow: hidden;
+          display: block;
+          position: absolute;
+          border: 0;
+          width: 1px;
+          height: 1px;
+          clip: rect(1px, 1px, 1px, 1px);
+          + label {
+            display: inline-block;
+            padding-inline-start: 1.75rem;
+            inline-size: 100%;
+            block-size: 1.5rem;
+            font-size: 0.875rem;
+            background: url(./../../assets/login/unckecked.png) no-repeat;
+          }
+          &:checked {
+            + label {
+              background: url(./../../assets/login/checked.png) no-repeat;
+            }
+          }
+        }
+        @media (min-width: 768px) {
+          order: 0;
+        }
+      }
+      .security {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 0.5rem;
+        visibility: hidden;
+
+        .security__switch {
+          text-transform: uppercase;
+          color: var(--security-switch-color);
+          font-size: 0.875rem;
+          font-weight: 700;
+          line-height: 1.3125rem;
+        }
+
+        @media (min-width: 768px) {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  @layer Font {
+    /* Custom Properties */
+    .font-base {
+      font-size: 1rem;
+      color: #121212;
+    }
   }
 }
 @layer Utility {

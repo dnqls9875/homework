@@ -32,7 +32,7 @@
         <input type="text" class="login-form__nickname" id="nickname" name="nickname" placeholder="아이디" required />
         <label for="password" class="sr-only">비밀번호</label>
         <input type="password" class="login-form__password" id="password" name="password" placeholder="비밀번호" required />
-        <button type="submit" class="btn-login">로그인</button>
+        <button type="submit" class="btn-login green">로그인</button>
       </form>
       <form action="/" class="state-from">
         <div class="keep">
@@ -40,9 +40,10 @@
           <label for="keep" class="keep__label">로그인 상태 유지</label>
         </div>
         <div class="security">
-          <a href="./pages/ip_security.html" class="security__link">IP보안</a>
-          <input type="checkbox" class="security__switch" id="security" name="security" />
-          <label for="security" class="security__label"></label>
+          <a href="./pages/ip_security.html" class="security__link font-base">IP보안</a>
+          <p class="security__switch">off</p>
+          <!-- <input type="checkbox" class="security__switch" id="security" name="security" />
+          <label for="security" class="security__label"></label> -->
         </div>
       </form>
     </div>
