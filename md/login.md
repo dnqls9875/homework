@@ -234,12 +234,15 @@
 #### HTML
 
 ```html
-<input type="text" class="login-form__username" id="username" name="username" placeholder="아이디" required />
-<label for="username" class="sr-only">아이디</label>
-<p id="usernameError" class="error-message">아이디는 이메일을 입력해 주세요</p>
-<input type="password" class="login-form__password" id="password" name="password" placeholder="비밀번호" required />
-<label for="password" class="sr-only">비밀번호</label>
-<p id="passwordError" class="error-message">비밀번호는 10자리 이상 입력해 주세요</p>
+<form action="/" method="post" class="login-form" id="loginForm">
+  <input type="text" class="login-form__username" id="username" name="username" placeholder="아이디" required />
+  <label for="username" class="sr-only">아이디</label>
+  <p id="usernameError" class="error-message">아이디는 이메일을 입력해 주세요</p>
+  <input type="password" class="login-form__password" id="password" name="password" placeholder="비밀번호" required />
+  <label for="password" class="sr-only">비밀번호</label>
+  <p id="passwordError" class="error-message">비밀번호는 10자리 이상 입력해 주세요</p>
+  <button type="submit" class="btn-login green" id="loginButton">로그인</button>
+</form>
 ```
 
 > 일단 마크업은 이렇게 작성했다. input과 label 밑에 와야하기 때문에 p태그로 작성을 했다.
