@@ -1,5 +1,5 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
-@layer Variable, Reset, Layout, Components, Utility, Accessibility;
+@layer Variable, Reset, Layout, Components, Accessibility;
 
 @layer Variable {
   :root {
@@ -160,8 +160,8 @@
   :is(.login-wrapper, .login-form) {
     display: flex;
     flex-flow: column wrap;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
   }
 
   .login-wrapper {
@@ -305,6 +305,7 @@
       --error-text-color: #ff1414;
 
       overflow: hidden;
+      align-self: start;
       opacity: 0;
       block-size: 0;
       color: var(--error-text-color);
@@ -314,7 +315,6 @@
       padding-block-start: 0;
     }
   }
-
   @layer Font {
     /* Custom Properties */
     .font-base {
@@ -323,7 +323,6 @@
     }
   }
 }
-
 @layer Accessibility {
   .sr-only {
     position: absolute;
