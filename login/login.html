@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>폼 서식양식 과제 | Techit</title>
     <link rel="stylesheet" href="./styles/login.css" />
+    <script type="module" src="./js/login.js"></script>
+    <noscript>
+      <p>Javascript를 지원하지 않은 환경에서는 서비스를 이용할 수 없습니다.</p>
+    </noscript>
   </head>
   <body>
     <div class="login-wrapper">
@@ -27,23 +31,23 @@
           </svg>
         </a>
       </h1>
-      <form action="/" class="login-form">
-        <label for="nickname" class="sr-only">아이디</label>
-        <input type="text" class="login-form__nickname" id="nickname" name="nickname" placeholder="아이디" required />
+      <form action="/" class="login-form" id="loginForm">
+        <input type="text" class="login-form__username" id="username" name="username" placeholder="아이디" />
+        <label for="username" class="sr-only">아이디</label>
+        <p id="usernameError" class="error-message">아이디는 이메일을 입력해 주세요</p>
+        <input type="password" class="login-form__password" id="password" name="password" placeholder="비밀번호" />
         <label for="password" class="sr-only">비밀번호</label>
-        <input type="password" class="login-form__password" id="password" name="password" placeholder="비밀번호" required />
-        <button type="submit" class="btn-login green">로그인</button>
+        <p id="passwordError" class="error-message">비밀번호는 10자리 이상 입력해 주세요</p>
+        <button type="submit" class="btn-login green" id="loginButton">로그인</button>
       </form>
-      <form action="/" class="state-from">
+      <form action="/" class="state-form">
         <div class="keep">
           <input type="checkbox" class="keep__check" id="keep" name="keep" />
-          <label for="keep" class="keep__label">로그인 상태 유지</label>
+          <label for="keep" class="keep__label" tabindex="0">로그인 상태 유지</label>
         </div>
         <div class="security">
           <a href="./pages/ip_security.html" class="security__link font-base">IP보안</a>
-          <p class="security__switch">off</p>
-          <!-- <input type="checkbox" class="security__switch" id="security" name="security" />
-          <label for="security" class="security__label"></label> -->
+          <button type="button" class="switch-button" id="switch" tabindex="0">off</button>
         </div>
       </form>
     </div>

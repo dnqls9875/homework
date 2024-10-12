@@ -144,9 +144,9 @@
     background-color: transparent;
     border: 0;
     outline: 0;
+    cursor: pointer;
   }
   input:focus,
-  button:focus,
   textarea:focus,
   select:focus,
   label:focus,
@@ -160,8 +160,8 @@
   :is(.login-wrapper, .login-form) {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
   }
 
   .login-wrapper {
@@ -171,10 +171,13 @@
     min-inline-size: var(--minwidth-content-size);
 
     @media (min-width: 768px) {
+      inline-size: 500px;
+      margin-inline: auto;
     }
   }
   .brand {
     flex: 0 0 auto;
+    align-self: center;
   }
   .logo {
     display: block;
@@ -192,6 +195,14 @@
       &.green {
         background-color: var(--button-bg-color);
       }
+    }
+    .switch-button {
+      text-transform: uppercase;
+      color: var(--security-switch-color);
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.3125rem;
+      padding-inline: 0;
     }
   }
   @layer Form {
@@ -232,14 +243,13 @@
         font-weight: 700;
         block-size: 3.5rem;
         margin-block-start: 1.25rem;
-        cursor: pointer;
 
         @media (min-width: 768px) {
           border: 1px solid rgba(0, 0, 0, 0.1);
         }
       }
     }
-    .state-from {
+    .state-form {
       --security-switch-color: #999;
 
       display: flex;
@@ -254,16 +264,17 @@
           display: block;
           position: absolute;
           border: 0;
-          width: 1px;
-          height: 1px;
+          inline-size: 1px;
+          block-size: 1px;
           clip: rect(1px, 1px, 1px, 1px);
+
           + label {
             display: inline-block;
             padding-inline-start: 1.75rem;
             inline-size: 100%;
             block-size: 1.5rem;
             font-size: 0.875rem;
-            background: url(./../../assets/login/unckecked.png) no-repeat;
+            background: url(./../../assets/login/unchecked.png) no-repeat;
           }
           &:checked {
             + label {
@@ -271,6 +282,7 @@
             }
           }
         }
+
         @media (min-width: 768px) {
           order: 0;
         }
@@ -282,20 +294,27 @@
         gap: 0.5rem;
         visibility: hidden;
 
-        .security__switch {
-          text-transform: uppercase;
-          color: var(--security-switch-color);
-          font-size: 0.875rem;
-          font-weight: 700;
-          line-height: 1.3125rem;
-        }
-
         @media (min-width: 768px) {
           visibility: visible;
         }
       }
     }
   }
+  @layer Error {
+    .error-message {
+      --error-text-color: #ff1414;
+
+      overflow: hidden;
+      opacity: 0;
+      block-size: 0;
+      color: var(--error-text-color);
+      font-size: 0.75rem;
+      transition: opacity 0.3s ease, height 0.3s ease;
+      line-height: 1.125rem;
+      padding-block-start: 0;
+    }
+  }
+
   @layer Font {
     /* Custom Properties */
     .font-base {
@@ -303,8 +322,6 @@
       color: #121212;
     }
   }
-}
-@layer Utility {
 }
 
 @layer Accessibility {
