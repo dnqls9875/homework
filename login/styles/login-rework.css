@@ -1,0 +1,54 @@
+@import "./login-components.css";
+
+.container {
+  padding: 0 1.25rem;
+
+  .brand {
+    inline-size: 14.375rem;
+    margin-inline: auto;
+    margin-block: 4.375rem 2.8125rem;
+
+    @media (min-width: 48rem) {
+      margin-block: 6.25rem 3.125rem;
+    }
+  }
+
+  .login-form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.625rem;
+
+    @media (min-width: 48rem) {
+      inline-size: 500px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+  }
+
+  .flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    order: 1;
+
+    .checkbox {
+      order: 1;
+
+      @media (min-width: 48rem) {
+        order: 0;
+      }
+    }
+    .security {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 0.5rem;
+      visibility: hidden;
+
+      @media (min-width: 48rem) {
+        visibility: visible;
+      }
+    }
+  }
+}

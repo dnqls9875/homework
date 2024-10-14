@@ -1,0 +1,305 @@
+/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+@layer Reset, Variable, Components, Accessibility;
+
+@layer Reset {
+  /* 포커스 스타일링 */
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    border: 1px solid #24388d;
+  }
+
+  :is(input[type="email"], input[type="password"], input[type="text"]):focus-visible {
+    border: none;
+  }
+  /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+  html,
+  body,
+  p,
+  ol,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  blockquote,
+  figure,
+  fieldset,
+  legend,
+  textarea,
+  pre,
+  iframe,
+  hr,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: normal;
+  }
+  ul {
+    list-style: none;
+  }
+  button,
+  input,
+  select {
+    margin: 0;
+  }
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  img,
+  video {
+    height: auto;
+    max-width: 100%;
+  }
+  iframe {
+    border: 0;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  td,
+  th {
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+@layer Variable {
+  :root {
+    /* 색상 */
+    --navy: #24388d;
+    --green: #03cf5d;
+    --garyda: #dadada;
+    --white: #fff;
+    --gray99: #999;
+    --gray33: #333;
+    --gary12: #121212;
+    --red: #ff1414;
+
+    /* 아이콘 크기 */
+    --size-sm: 0.75rem;
+    --size-base: 1rem;
+    --size-md: 1.25rem;
+    --size-lg: 1.5rem;
+
+    /* 글자 크기 */
+    --font-sm: 0.75rem;
+    --font-base: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.125rem;
+  }
+}
+
+@layer Compoents {
+  @layer Brand {
+    .brand {
+      a,
+      svg {
+        display: block;
+      }
+    }
+  }
+  @layer Button {
+    .login-btn {
+      --main-color: var(--green, #03cf5d);
+      --text-color: var(--white, #fff);
+
+      background-color: var(--main-color);
+      color: var(--text-color);
+      /* inline-size: 100%; */
+      block-size: 3.5rem;
+      padding: 1rem;
+      line-height: 1.5rem;
+      font-size: var(--font-md, 1rem);
+    }
+  }
+  @layer Input {
+    .input {
+      --border-color: var(--garyda, #dadada);
+      --placeholder-color: var(--gray99, #999);
+      --text-color: var(--gray33, #333);
+
+      /* .input__input {
+        inline-size: 100%;
+        block-size: 48px;
+        padding: 0.875rem;
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-size: var(--font-base);
+        line-height: 1.3125rem;
+
+        &:user-invalid + .input__error-message {
+          visibility: visible;
+        }
+
+        &::placeholder {
+          color: var(--placeholder-color);
+          font-size: var(--font-base);
+        }
+
+        &:focus {
+          border: 1px solid var(--green);
+          background-color: #e9f0fd;
+        }
+      } */
+
+      .input__input {
+        border: 1px solid var(--border-color);
+        inline-size: 100%;
+        block-size: 3rem;
+        padding: 0.875rem;
+
+        &:user-invalid + .input__error-message span {
+          visibility: visible;
+        }
+
+        &:focus {
+          border: 1px solid var(--green);
+          background-color: #e9f0fd;
+        }
+      }
+      .input__error-message {
+        --error-message-color: var(--red, #ff1414);
+
+        color: var(--error-message-color);
+        font-size: var(--font-sm);
+        line-height: 1.125rem;
+        margin-block-start: 0.4375rem;
+        span {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+  @layer Checkbox {
+    .checkbox {
+      --icon-size: var(--size-lg, 1.5rem);
+      position: relative;
+
+      .checkbox__input {
+        display: block;
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        margin: 0;
+        inline-size: var(--icon-size);
+        aspect-ratio: 1/1;
+        appearance: none;
+
+        &:checked {
+          + label {
+            background: url(./../../assets/login/checked.png) no-repeat 0 0 / contain;
+          }
+        }
+      }
+      .checkbox__label {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding-inline-start: 1.75rem;
+        background: url(./../../assets/login/unchecked.png) no-repeat 0 0 / contain;
+      }
+    }
+  }
+  @layer Switch {
+    .switch {
+      --text-color: var(--gray99, #999);
+      --text-active-color: var(--green, #03cf5d);
+
+      position: relative;
+      font-size: 0.875rem;
+      font-weight: 700;
+
+      .switch__input {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        margin: 0;
+        inline-size: 2em;
+        block-size: 1rem;
+        appearance: none;
+
+        &:checked {
+          + label {
+            color: var(--text-active-color);
+            &::after {
+              content: "ON";
+            }
+          }
+        }
+      }
+      .switch__label {
+        display: block;
+        color: var(--text-color);
+        inline-size: 2em;
+        text-align: end;
+
+        &::after {
+          content: "OFF";
+        }
+      }
+    }
+  }
+  @layer Anchor {
+    .anchor--blank {
+      --anchor-text: var(--gray33, #333);
+
+      color: var(--anchor-text);
+      text-align: right;
+      font-size: 0.875rem;
+      line-height: 1.3125rem;
+    }
+  }
+  @layer Form {
+  }
+  @layer Font {
+    /* Custom Properties */
+    .font-base {
+      font-size: 1rem;
+      color: #121212;
+    }
+  }
+}
+@layer Accessibility {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
