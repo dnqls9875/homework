@@ -36,14 +36,30 @@
         <form action="/" class="login-form">
           <div class="input" role="group">
             <label class="input__label sr-only" for="input-1">아이디</label>
-            <input class="input__input" type="email" id="input-1" required placeholder="아이디" aria-errormessage="error-message-1" />
+            <input
+              class="input__input"
+              type="email"
+              id="input-1"
+              required
+              placeholder="아이디"
+              aria-errormessage="error-message-1"
+              aria-invalid="true"
+            />
             <p class="input__error-message" role="alert" id="error-message-1" aria-live="polite">
               <span>아이디를 입력해 주세요.</span>
             </p>
           </div>
           <div class="input" role="group">
             <label class="input__label sr-only" for="input-2">비밀번호</label>
-            <input class="input__input" type="password" id="input-2" required placeholder="비밀번호" aria-errormessage="error-message-2" />
+            <input
+              class="input__input"
+              type="password"
+              id="input-2"
+              required
+              placeholder="비밀번호"
+              aria-errormessage="error-message-2"
+              aria-invalid="true"
+            />
             <p class="input__error-message" role="alert" id="error-message-2" aria-live="polite">
               <span>비밀번호를 입력해 주세요.</span>
             </p>

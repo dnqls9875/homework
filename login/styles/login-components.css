@@ -149,30 +149,6 @@
       --placeholder-color: var(--gray99, #999);
       --text-color: var(--gray33, #333);
 
-      /* .input__input {
-        inline-size: 100%;
-        block-size: 48px;
-        padding: 0.875rem;
-        border: 1px solid var(--border-color);
-        color: var(--text-color);
-        font-size: var(--font-base);
-        line-height: 1.3125rem;
-
-        &:user-invalid + .input__error-message {
-          visibility: visible;
-        }
-
-        &::placeholder {
-          color: var(--placeholder-color);
-          font-size: var(--font-base);
-        }
-
-        &:focus {
-          border: 1px solid var(--green);
-          background-color: #e9f0fd;
-        }
-      } */
-
       .input__input {
         border: 1px solid var(--border-color);
         inline-size: 100%;
@@ -180,7 +156,7 @@
         padding: 0.875rem;
 
         &:user-invalid + .input__error-message span {
-          visibility: visible;
+          display: block;
         }
 
         &:focus {
@@ -196,7 +172,7 @@
         line-height: 1.125rem;
         margin-block-start: 0.4375rem;
         span {
-          visibility: hidden;
+          display: none;
         }
       }
     }
@@ -279,8 +255,6 @@
       font-size: 0.875rem;
       line-height: 1.3125rem;
     }
-  }
-  @layer Form {
   }
   @layer Font {
     /* Custom Properties */
