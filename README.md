@@ -9,6 +9,7 @@
 | 1주차 | [소개 문서](./md/about-me.md)                                                                               | ✅             |
 | 2주차 | [2주차 과제 문서](./md/avatars.md)                                                                          | ✅             |
 | 3주차 | [3주차 과제 문서](./md/login.md) / [3주차 과제 html](https://dnqls9875.github.io/homework/login/login.html) | ✅             |
+| 3주차 | [4주차 과제 문서](./apple/apple.md) / [4주차 과제 html](https://dnqls9875.github.io/homework/apple.html)    |                |
 
 <hr>
 
