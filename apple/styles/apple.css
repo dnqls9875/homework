@@ -1,3 +1,141 @@
-@import url(card-component.css);
+@import url(./reset.css);
+@import url(./card-component.css);
+@import url(./base.css);
+@import url(./theme.css);
 
 /* 카드 레이아웃 */
+.container {
+  container: container / inline-size;
+}
+
+.main {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+:has(.card) {
+  &.ipad-pro,
+  &.iphone-pro,
+  &.watch,
+  &.airpods-pro {
+    .title {
+      color: var(--white);
+    }
+  }
+}
+
+/* ipad-pro */
+.ipad-pro {
+  .card-wrapper {
+    /* 기본 배경 이미지 (1024px 미만, 1배율) */
+    background: url("./../products/ipad_pro.jpeg") no-repeat 50% 50% / cover;
+
+    /* 2배율 디바이스에서 1024px 미만 */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url("./../products/ipad_pro_2x.jpeg");
+    }
+    /* 1024px 이상, 기본 배경 이미지 */
+    @media (min-width: 1024px) {
+      background-image: url("./../products/ipad_pro_wide.jpeg");
+    }
+    /* 2배율 디바이스에서 1024px 이상 */
+    @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
+      background-image: url("./../products/ipad_pro_wide_2x.jpeg");
+    }
+  }
+}
+
+/* ipad-air */
+.ipad-air {
+  .card {
+    /* 기본 배경 이미지 (1024px 미만, 1배율) */
+    background: url("./../products/ipad_air.jpeg") no-repeat 50% 50% / cover;
+    /* 2배율 디바이스에서 1024px 미만 */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url("./../products/ipad_air_2x.jpeg");
+    }
+    /* 1024px 이상, 기본 배경 이미지 */
+    @media (min-width: 1024px) {
+      background-image: url("./../products/ipad_air_wide.jpeg");
+    }
+    /* 2배율 디바이스에서 1024px 이상 */
+    @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
+      background-image: url("./../products/ipad_air_wide_2x.jpeg");
+    }
+  }
+}
+
+/* iphone-pro */
+.iphone-pro {
+  .card {
+    /* 기본 배경 이미지 (1024px 미만, 1배율) */
+    background: url("./../products/iphone15_pro.jpeg") no-repeat 50% 50% / cover;
+    /* 2배율 디바이스에서 1024px 미만 */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url("./../products/iphone15_pro_2x.jpeg");
+    }
+    /* 1024px 이상, 기본 배경 이미지 */
+    @media (min-width: 1024px) {
+      background-image: url("./../products/iphone15_pro_wide.jpeg");
+    }
+    /* 2배율 디바이스에서 1024px 이상 */
+    @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
+      background-image: url("./../products/iphone15_pro_wide_2x.jpeg");
+    }
+  }
+}
+
+/* iphone-etc */
+.iphone-etc {
+  display: grid;
+  grid-gap: 1rem;
+
+  /* ipone */
+  .iphone {
+    .card {
+      /* 기본 배경 이미지 (1024px 미만, 1배율) */
+      background: url("./../products/iphone15.jpeg") no-repeat 50% 50% / cover;
+      /* 2배율 디바이스에서 1024px 미만 */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url("./../products/iphone15_2x.jpeg");
+      }
+    }
+  }
+  /* watch */
+  .watch {
+    .card {
+      /* 기본 배경 이미지 (1024px 미만, 1배율) */
+      background: url("./../products/apple_watch.jpeg") no-repeat 50% 50% / cover;
+      /* 2배율 디바이스에서 1024px 미만 */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url("./../products/apple_watch_2x.jpeg");
+      }
+    }
+  }
+  /* macbook-air */
+  .macbook-air {
+    .card {
+      /* 기본 배경 이미지 (1024px 미만, 1배율) */
+      background: url("./../products/macbook_air.jpeg") no-repeat 50% 50% / cover;
+      /* 2배율 디바이스에서 1024px 미만 */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url("./../products/macbook_air_2x.jpeg");
+      }
+    }
+  }
+  /* airpods-pro */
+  .airpods-pro {
+    .card {
+      /* 기본 배경 이미지 (1024px 미만, 1배율) */
+      background: url("./../products/airpods_pro.jpeg") no-repeat 50% 50% / cover;
+      /* 2배율 디바이스에서 1024px 미만 */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url("./../products/airpods_pro_2x.jpeg");
+      }
+    }
+  }
+
+  @container container (inline-size >= 64rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

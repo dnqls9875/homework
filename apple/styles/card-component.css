@@ -1,0 +1,100 @@
+/* 카드 컴포넌트 */
+.component-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-block-end: 0.5rem;
+  margin-block-end: 1rem;
+  border-bottom: 1px solid currentColor;
+}
+
+/* 타이틀 컴포넌트 */
+.title {
+  color: var(--black);
+  padding-block-start: 2.5rem;
+  text-align: center;
+
+  .title__main {
+    font-size: var(--large-text);
+    margin-block-end: var(--small-spacing);
+    line-height: 1;
+  }
+  .title__sub {
+    font-size: var(base-text);
+    margin-block-end: var(--x-small-spacing);
+    line-height: var(--line-normal);
+  }
+  .title__announcement {
+    font-size: 1.0625rem;
+    color: var(--gray);
+    line-height: 1;
+    margin-block-end: var(--small-spacing);
+  }
+}
+
+/* 링크 컴포넌트 */
+.link-wrapper {
+  /* blue type */
+  &.blue-type {
+    a {
+      color: var(--blue-400);
+
+      &.--is-active {
+        color: var(--white);
+        background-color: var(--blue-400);
+        border-color: var(--blue-400);
+      }
+    }
+  }
+  /* base type */
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--base-spacing);
+    > li {
+      > a {
+        display: block;
+        color: var(--black);
+        font-size: var(--xx-small-text);
+        padding: var(--x-small-spacing) var(--small-spacing);
+        border-radius: 3.125rem;
+        border: 1px solid currentColor;
+        line-height: 1;
+        &.--is-active {
+          background-color: var(--black);
+          color: var(--gray);
+        }
+      }
+    }
+  }
+}
+
+/* 카드 컴포넌트 */
+.card-wrapper {
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: var(--size);
+}
+@container container (inline-size >= 64rem) {
+  .title {
+    padding-block-start: 3.75rem;
+    .title__main {
+      font-size: var(--extra-large-text);
+      margin-block-end: var(--small-spacing);
+      line-height: 1;
+    }
+    .title__sub {
+      font-size: var(--medium-text);
+      margin-block-end: var(--x-small-spacing);
+      line-height: var(--line-normal);
+    }
+  }
+  .link-wrapper {
+    ul {
+      > li {
+        > a {
+          font-size: var(--x-small-text);
+        }
+      }
+    }
+  }
+}
