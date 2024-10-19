@@ -19,3 +19,7 @@
 | :-------------- | :----------------------------------------------------------------------------------- | :------------- |
 | 2주차 과제 수정 | [2주차 과제 수정](./md/avatars-modify.md)                                            | ✅             |
 | 3주차 과제 수정 | [3주차 과제 수정 html](https://dnqls9875.github.io/homework/login/login-rework.html) | ✅             |
+
+
+https://github.com/user-attachments/assets/a21a455c-8bcc-48b6-baf3-d2be6c563607
+
