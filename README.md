@@ -2,7 +2,7 @@
 
 태킷 프론트엔드 스쿨 12기 과제 저장소입니다🙌
 
-🙌 [마크다운 가이드 문서](./md/markdown-guide.md)
+🙌 [마크다운 가이드 문서](./md/markdown-guide.md)<br>
 💻 [html-css 전체 과제 index.html](./index.html)
 
 | 주차  | 과제명                                                                                                                                                                                         | 과제 확인 여부 |
