@@ -19,3 +19,4 @@
 | :-------------- | :----------------------------------------------------------------------------------- | :------------- |
 | 2주차 과제 수정 | [2주차 과제 수정](./md/avatars-modify.md)                                            | ✅             |
 | 3주차 과제 수정 | [3주차 과제 수정 html](https://dnqls9875.github.io/homework/login/login-rework.html) | ✅             |
+| 4주차 과제 수정 | [4주차 과제 수정 html](https://dnqls9875.github.io/homework/apple/apple-modify.html) | ✅             |
